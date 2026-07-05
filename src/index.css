@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/*
+ * Instrument-panel tokens, derived from the validated reference dataviz palette.
+ * Light mode only (prototype scope).
+ */
+@theme {
+  --color-surface: #fcfcfb; /* chart/panel surface */
+  --color-plane: #f9f9f7; /* page plane */
+  --color-ink: #0b0b0b;
+  --color-ink-2: #52514e;
+  --color-ink-3: #898781;
+  --color-hairline: #e1e0d9;
+  --color-baseline: #c3c2b7;
+
+  --color-accent: #2a78d6; /* series blue 450 */
+  --color-accent-deep: #1c5cab; /* blue 550 */
+  --color-accent-wash: #cde2fb; /* blue 100 — meter track */
+  --color-accent-faint: #eef4fd;
+
+  --color-credit: #4a3aa7; /* credits are their own visible currency */
+  --color-credit-wash: #edeaf9;
+
+  --color-good: #0ca30c;
+  --color-good-text: #006300;
+  --color-good-wash: #e9f6e9;
+  --color-warn: #fab219;
+  --color-warn-text: #7a5200;
+  --color-warn-wash: #fdf3dc;
+  --color-serious: #ec835a;
+  --color-serious-text: #983c14;
+  --color-serious-wash: #fdeee7;
+  --color-critical: #d03b3b;
+  --color-critical-text: #b02a2a;
+  --color-critical-wash: #fbe9e9;
+
+  --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas,
+    monospace;
+}
+
+html {
+  background: var(--color-plane);
+  color: var(--color-ink);
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
