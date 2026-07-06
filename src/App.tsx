@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import Shell from "./components/Shell";
 import Overview from "./screens/Overview";
 import RetroClose from "./screens/RetroClose";
@@ -11,9 +11,12 @@ import Coordination from "./screens/Coordination";
 import Positions from "./screens/Positions";
 import Incident from "./screens/Incident";
 
+/** Hash routing for single-file/hosted-page builds (no history API on the host). */
+const Router = import.meta.env.VITE_HASH_ROUTER ? HashRouter : BrowserRouter;
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route element={<Shell />}>
           <Route index element={<Overview />} />
@@ -29,6 +32,6 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
